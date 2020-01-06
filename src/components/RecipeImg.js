@@ -6,7 +6,7 @@ const RecipeImg = (props) => {
     return (
         <div>
           <Card>
-            <CardImg top width="100%" src={Image} alt="pancakes" />
+            <CardImg src={Image} class="img-thumbnail" alt="pancakes" />
           </Card>
         </div>
     )

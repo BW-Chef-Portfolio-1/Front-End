@@ -93,10 +93,9 @@ const ChefDashboard = props => {
                 ></i>
               </Link>
             </span>
+            
           </div>
-          <div>
-            <ChefRecipes />
-          </div>
+          
         </div>
       </div>
     </div>
