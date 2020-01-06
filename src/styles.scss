@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -225,13 +226,13 @@ body {
   margin-left: 2%;
   color: #07fe20;
 
-    span {
-      font-size: 1.5rem;
+  span {
+    font-size: 1.5rem;
 
-        a {
-         color: white; 
-        }
+    a {
+      color: white;
     }
+  }
 }
 
 //create-recipe form
@@ -242,6 +243,8 @@ body {
 }
 
 .add-form {
+  // border: 2px solid red;
+  // width: 60%;
   h2 {
     color: #07fe20;
 
@@ -255,58 +258,196 @@ body {
   margin: 20px;
   text-align: left;
 
-    form {
-      width: 60%;
+  form {
+    width: 60%;
 
-      span {
-        display: flex;
-  
-          p {
-            width: 100px;
-          }
-  
-          input {
-            margin: 15px;
-            width: 200px;
+    span {
+      display: flex;
 
-          }
+      p {
+        width: 100px;
+      }
 
-          .type, .name, .theme {
-            width: 400px;
-          }
-       }
+      input {
+        margin: 15px;
+        width: 200px;
+      }
+
+      .type,
+      .name,
+      .theme {
+        width: 400px;
+      }
     }
+  }
 
     textarea {
       margin-left: 0;
       width: 100%;
     }
+  h2 {
+    color: #07fe20;
 
-    .ingredients {
-      height: 400px;
+    i {
+      margin: 5px;
     }
+  }
 
-    .directions {
-      height: 300px;
-    }
+  textarea {
+    margin-left: 0;
+    width: 100%;
+  }
 
-    .notes {
-      height: 200px;
-    }
+  .ingredients {
+    height: 400px;
+  }
 
-    .bottom-text {
-      color: #07fe20;
-    }
+  .directions {
+    height: 300px;
+  }
 
-    button {
-      width: 500px;
-      height: 40px;
-      margin: 20px;
-      margin-left: 150px;
-      background-color: #07fe20;
-      font-size: 2rem;
-    }
+  .notes {
+    height: 200px;
+  }
+
+  .bottom-text {
+    color: #07fe20;
+  }
+
+  button {
+    width: 500px;
+    height: 40px;
+    margin: 20px;
+    margin-left: 150px;
+    background-color: #07fe20;
+    font-size: 2rem;
+    border: none;
+  }
 }
 
+/*Edit Info*/
+.info-div {
+  // border: 2px solid red;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #07fe20;
 
+    border-bottom: 3px solid #2f2d2d;
+  }
+}
+.info-form {
+  display: flex;
+  flex-direction: column;
+  // border: 2px solid red;
+  width: 300px;
+  height: 360px;
 
+  .info-labels {
+    color: #07fe20;
+    text-align: left;
+  }
+  .info-inputs {
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #07fe20;
+    color: #f3ffef;
+  }
+}
+.info-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .info-button {
+    color: #07fe20;
+    border: 3px solid #2f2d2d;
+    background-color: transparent;
+    font-size: 22px;
+    width: 60%;
+  }
+}
+
+/*About Info*/
+.about-edit-div {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #07fe20;
+
+    border-bottom: 3px solid #2f2d2d;
+  }
+  .about-form {
+    width: 50%;
+    height: 40%;
+    // background-color: #2f2d2d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // .about-label {
+    //   color: #07fe20;
+    //   font-size: 24px;
+    // }
+    .about-button {
+      color: #07fe20;
+      border: 3px solid #2f2d2d;
+      background-color: transparent;
+      font-size: 22px;
+      margin-top: 3%;
+    }
+    textarea::placeholder {
+      font-size: 20px;
+    }
+  }
+}
+/*Profile Picture*/
+.profile-pic-div {
+  // border: 2px solid red;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #07fe20;
+    border-bottom: 3px solid #2f2d2d;
+  }
+  .image-div {
+    background-color: #2f2d2d;
+    border: 5px solid #07fe20;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10%;
+  }
+  .profile-pic-form {
+    // border: 2px solid #2f2d2d;
+    width: 60%;
+    padding: 12px;
+  }
+  .profile-pic-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #07fe20;
+    font-size: 20px;
+    color: #f3ffef;
+  }
+  .profile-pic-input::placeholder {
+    font-size: 20px;
+  }
+  .profile-pic-button {
+    color: #07fe20;
+    border: 3px solid #2f2d2d;
+    background-color: transparent;
+    font-size: 22px;
+    margin-top: 3%;
+  }
+}
