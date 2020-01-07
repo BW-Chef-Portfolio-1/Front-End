@@ -65,15 +65,29 @@ export const ADD_RECIPE_START = "ADD_RECIPE_START";
 export const ADD_RECIPE_SUCCESS = "ADD_RECIPE_SUCCESS";
 export const ADD_RECIPE_FAILURE = "ADD_RECIPE_FAILURE";
 
-export const addRecipe = newRecipe => dispatch => {
-  dispatch({ type: ADD_RECIPE_START });
-  // console.log(newRecipe );
-  axiosWithAuth()
-    .post("/login/register", newRecipe)
-    .then(res => {
-      dispatch({ type: ADD_RECIPE_SUCCESS, payload: res });
+// export const addRecipe = newRecipe => dispatch => {
+//   dispatch({ type: ADD_RECIPE_START });
+//   // console.log(newRecipe );
+//   axiosWithAuth()
+//     .post("/login/register", newRecipe)
+//     .then(res => {
+//       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res });
 
-      console.log(`this is the response ${res.data}`);
+//       console.log(`this is the response ${res.data}`);
+//     })
+//     .catch(err => {
+//       dispatch({ type: ADD_RECIPE_FAILURE, payload: err.response });
+//     });
+// };
+
+export const addRecipe = (addRecipe) => dispatch => {
+  console.log('add recipe', addRecipe);
+  dispatch({ type: ADD_RECIPE_START });
+  axiosWithAuth()
+    .post("/login/register", addRecipe)
+    .then(res => {
+      console.log('res', res)
+      dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err.response });

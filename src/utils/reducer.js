@@ -90,6 +90,24 @@ export const reducer = (state = initialState, action) => {
         error: action.payload,
         isUpdating: false
       };
+    case ADD_RECIPE_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      }
+    case ADD_RECIPE_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        recipes: [...state.recipes, action.payload],
+      }
+    case ADD_RECIPE_FAILURE:
+      return {
+        ...state,
+        idFetching: false,
+        error: `Error: Unable to add recipe: ${action.payload}`
+      }
 
     default:
       return state;
