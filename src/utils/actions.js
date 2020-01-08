@@ -65,31 +65,56 @@ export const ADD_RECIPE_START = "ADD_RECIPE_START";
 export const ADD_RECIPE_SUCCESS = "ADD_RECIPE_SUCCESS";
 export const ADD_RECIPE_FAILURE = "ADD_RECIPE_FAILURE";
 
-// export const addRecipe = newRecipe => dispatch => {
-//   dispatch({ type: ADD_RECIPE_START });
-//   // console.log(newRecipe );
-//   axiosWithAuth()
-//     .post("/login/register", newRecipe)
-//     .then(res => {
-//       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res });
-
-//       console.log(`this is the response ${res.data}`);
-//     })
-//     .catch(err => {
-//       dispatch({ type: ADD_RECIPE_FAILURE, payload: err.response });
-//     });
-// };
-
-export const addRecipe = (addRecipe) => dispatch => {
-  console.log('add recipe', addRecipe);
-  dispatch({ type: ADD_RECIPE_START });
+export const addRecipe = newRecipe => dispatch => {
+  dispatch({ type: ADD_RECIPE_START, payload: newRecipe });
+  console.log(newRecipe);
   axiosWithAuth()
-    .post("/login/register", addRecipe)
+    .post("/recipes/post", newRecipe)
     .then(res => {
-      console.log('res', res)
-      dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
+      dispatch({ type: ADD_RECIPE_SUCCESS });
+
+      console.log(`this is the response ${res.data}`);
     })
     .catch(err => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err.response });
+    });
+};
+
+//(get) Get Recipe by id
+export const FETCH_RECIPE_START = "FETCH_RECIPE_START";
+export const FETCH_RECIPE_SUCCESS = "FETCH_RECIPE_SUCCESS";
+export const FETCH_RECIPE_FAILURE = "FETCH_RECIPE_FAILURE";
+
+export const getRecipe = id => dispatch => {
+  dispatch({ type: FETCH_RECIPE_START });
+
+  axiosWithAuth()
+    .get(`/recipes/user/${id}`)
+    .then(res => {
+      dispatch({ type: FETCH_RECIPE_SUCCESS, payload: res.data });
+
+      console.log(`this is the response ${res.data}`);
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_RECIPE_FAILURE, payload: err.response });
+    });
+};
+//(get) Get all Recipes
+export const FETCH_ALL_RECIPE_START = "FETCH_ALL_RECIPE_START";
+export const FETCH_ALL_RECIPE_SUCCESS = "FETCH_ALL_RECIPE_SUCCESS";
+export const FETCH_ALL_RECIPE_FAILURE = "FETCH_ALL_RECIPE_FAILURE";
+
+export const getAllRecipe = () => dispatch => {
+  dispatch({ type: FETCH_ALL_RECIPE_START });
+
+  axiosWithAuth()
+    .get("/recipes")
+    .then(res => {
+      dispatch({ type: FETCH_ALL_RECIPE_SUCCESS, payload: res.data });
+
+      console.log(`this is the response ${res.data}`);
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_ALL_RECIPE_FAILURE, payload: err.response });
     });
 };

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import ChefRecipes from "./ChefRecipes.js";
 import { connect } from "react-redux";
 import { getChef } from "../utils/actions";
+import RecipeImg from "./RecipeImg";
 const ChefDashboard = props => {
   const userId = localStorage.getItem("userId");
 
@@ -95,6 +95,7 @@ const ChefDashboard = props => {
                 ></i>
               </Link>
             </span>
+              <RecipeImg />
           </div>
         </div>
       </div>
